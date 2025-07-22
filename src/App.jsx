@@ -7,6 +7,7 @@ import SearchBar from './components/general/SearchBar.jsx'
 import Button from './components/general/Button.jsx'
 import SelectInput from './components/general/SelectInput.jsx'
 import axios from 'axios'
+import Authentication from './routes/auth/Authentication.jsx'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -47,15 +48,20 @@ function App() {
       }
     };
 
-      checkAccessToken();
+    checkAccessToken();
   }, []);
 
   return (
     <div className='App'>
       {
         isLoggedIn ?
-        (<p>Logged In</p>) :
-        (<p>Not Logged In</p>)
+          (<p>Logged In</p>) :
+          (
+            <Authentication
+              setUserUsername={setUserUserName}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          )
       }
     </div>
   )

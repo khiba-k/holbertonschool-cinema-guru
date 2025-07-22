@@ -32,7 +32,10 @@ const Register = ({
             <Button
                 label={"Sign Up"}
                 icon={<FontAwesomeIcon icon={faPlus} />}
-                onClick={""}
+                type="submit"
+                onClick={() => {
+                    console.log("Registering user:", username);
+                }}
             />
         </>
     )

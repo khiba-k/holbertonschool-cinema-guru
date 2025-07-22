@@ -8,7 +8,7 @@ const Button = ({
     icon = null,
 }) => {
     return (
-        <div className={className} onClick={() => onClick}>{icon} {" "}{label}</div>
+        <button className={className} onClick={onClick}>{icon} {" "}{label}</button>
     )
 }
 
