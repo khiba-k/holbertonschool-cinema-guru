@@ -1,13 +1,8 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Input from './components/general/Input.jsx'
-import SearchBar from './components/general/SearchBar.jsx'
-import Button from './components/general/Button.jsx'
-import SelectInput from './components/general/SelectInput.jsx'
 import axios from 'axios'
 import Authentication from './routes/auth/Authentication.jsx'
+import Dashboard from './routes/dashboard/Dashboard.jsx'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -56,7 +51,15 @@ function App() {
     <div className='App'>
       {
         isLoggedIn ?
-          (<p>Logged In</p>) :
+          (
+            <>
+              <Dashboard
+                userUsername={userUserName}
+                setIsLoggedIn={setIsLoggedIn}
+              />
+              <p>Logged In</p>
+            </>
+          ) :
           (
             <Authentication
               setUserUsername={setUserUserName}
