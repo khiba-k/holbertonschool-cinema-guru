@@ -16,16 +16,17 @@ const SideBar = () => {
     let navigate = useNavigate();
 
     useEffect(() => {
+        console.log("Fetching activities...");
         const token = localStorage.getItem('accessToken');
         if (!token) return;
-
+    
         axios.get('http://localhost:8000/api/activity', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
             .then((response) => {
-                console.log("Activity Response Data: ",response.data);
+                console.log("Activity Response Data: ",response);
                 setActivities(response.data);
             })
             .catch((error) => {
