@@ -10,13 +10,10 @@ const SearchBar = ({
     }
 
     return (
-        <div>
-            {/* <label>
-                Search
-            </label> */}
+        <div className="searchbar-wrapper">
             <input
                 placeholder='Search Movies'
-                className='search-bar'
+                className="searchbar-input"
                 onChange={
                     (e) => handleInput(e)
                 }

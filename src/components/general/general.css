@@ -1,41 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
     --guru-red: #BB000E;
     --button-red: #E31C25;
-}
+} */
 
-button {
-    color: white;
-    background-color: var(--button-red);
-    border: none;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.search-bar {
-    border-radius: 30px;
-    padding-left: 12px;
-    width: 535px;
-    height: 28px;
-    border: none;
-}
-
-label {
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-}
-
-.input-and-label {
+.input-wrapper {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1.5rem;
 }
 
-input {
+.input-label {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.input-icon {
+    margin-right: 0.5rem;
+    color: #d9a3a3;
+    font-size: 1rem;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #cc0000;
+    padding-bottom: 4px;
+}
+
+.input-field {
     border: none;
+    background: transparent;
+    font-size: 1rem;
+    flex: 1;
+    padding: 0.25rem 0;
+    color: #222;
 }
 
-.input-line {
-    border-bottom: 2px solid var(--guru-red);
+.general-button {
+    border-radius: 0px;
+    background-color: #cc0000;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.button-icon {
+    margin-right: 0.4rem;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+/* searchbar */
+.searchbar-wrapper {
+    width: 20rem;
+}
+
+.searchbar-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 2rem;
+    /* fully rounded */
+    background-color: #2b2b2b;
+    /* dark but not black */
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.searchbar-input:focus {
+    background-color: #e7e4e4;
+    /* soft gray */
 }

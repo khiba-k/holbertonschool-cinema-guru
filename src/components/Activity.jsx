@@ -1,17 +1,23 @@
 import React from 'react'
 "./components.css"
 
-const Activity = ({activities}) => {
-    
+const Activity = ({ activities }) => {
+
     return (
         <div>
-            <p>Latest Activities</p>
-            <ul>
+            <h4 className="activity-title">
+                <span className="label">Latest Activities</span>
+            </h4>
+            <ul className="activity-list">
                 {
                     activities.map(activity => (
-                        <li key={activity.id}>
-                            <span>{activity.description}</span>
-                            <span className="timestamp"> - {activity.timestamp}</span>
+                        <li
+                            className="activity-item"
+                            key={activity.id}>
+                            <span className="activities-username">{username}</span> {actionText}{' '}
+                            <span className="activities-title">{title}</span> to{' '}
+                            <span className="activities-list">{listName}</span>{' '}
+                            <span className="activities-date">– {formattedDate}</span>
                         </li>
                     ))
                 }

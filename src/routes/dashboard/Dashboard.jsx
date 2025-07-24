@@ -10,13 +10,15 @@ const Dashboard = ({
 }) => {
     return (
         <BrowserRouter>
-            <div>
+            <div className="dashboard-container">
                 <Header userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
-                <div className='dashboard-container'>
+                <div className="dashboard-content">
                     <SideBar />
-                    <h1>Welcome to the Dashboard, {userUsername}!</h1>
-                    <p>This is your personal space where you can manage your account and preferences.</p>
-                    {/* Additional dashboard content can go here */}
+                    <div className="main-view">
+                        <h1>Welcome to the Dashboard, {userUsername}!</h1>
+                        <p>This is your personal space where you can manage your account and preferences.</p>
+                        {/* Additional dashboard content can go here */}
+                    </div>
                 </div>
             </div>
         </BrowserRouter>

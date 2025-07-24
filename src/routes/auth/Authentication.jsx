@@ -20,7 +20,7 @@ const Authentication = ({
         event.preventDefault();
         try {
             if (_switch) {
-                const  token = await axios.post("http://localhost:8000/api/auth/login", {
+                const token = await axios.post("http://localhost:8000/api/auth/login", {
                     username: username,
                     password: password
                 })
@@ -52,40 +52,46 @@ const Authentication = ({
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
+        <div className="auth-wrapper">
+            <div className="auth-header">
                 <Button
                     label={"Sign In"}
                     onClick={() => {
                         _setSwitch(true)
                     }}
+                    className={`auth-toggle-btn ${_switch ? 'active' : ''}`}
                 />
                 <Button
                     label={"Sign Up"}
                     onClick={() => {
                         _setSwitch(false)
                     }}
+                    className={`auth-toggle-btn ${!_switch ? 'active' : ''}`}
                 />
             </div>
-            <div>
-                {
+            <div className="auth-body">
+                <form className="auth-form" onSubmit={handleSubmit}>
+                    <div>
+                        {
 
-                    _switch ?
-                        (<Login
-                            username={username}
-                            password={password}
-                            setUsername={setUsername}
-                            setPassword={setPassword}
-                        />) :
-                        (<Register
-                            username={username}
-                            password={password}
-                            setUsername={setUsername}
-                            setPassword={setPassword}
-                        />)
-                }
+                            _switch ?
+                                (<Login
+                                    username={username}
+                                    password={password}
+                                    setUsername={setUsername}
+                                    setPassword={setPassword}
+                                />) :
+                                (<Register
+                                    username={username}
+                                    password={password}
+                                    setUsername={setUsername}
+                                    setPassword={setPassword}
+                                />)
+                        }
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     )
 }
 

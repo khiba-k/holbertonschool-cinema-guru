@@ -13,19 +13,16 @@ const Header = ({ userUsername, setIsLoggedIn }) => {
     }
 
     return (
-        <div>
-            <h3>Cinema Guru</h3>
-            <img src="https://picsum.photos/100/100" alt="Logo" className="logo" />
-            <p>Welcome {userUsername}</p>
-            <span>
-
-                <Button className="logout-Button"
-                    label={"Logout"}
-                    icon={<FontAwesomeIcon icon={faBackward} />}
-                    onClick={() => logout()}
-                >Logout</Button>
-            </span>
-        </div>
+        <nav className="dashboard-header">
+            <div className="dashboard-left">Cinema Guru</div>
+            <div className="dashboard-right">
+                <img src="https://picsum.photos/100/100" alt="Logo" className="dashboard-avatar" />
+                <p className="dashboard-welcome">Welcome {userUsername}</p>
+                <span className="dashboard-logout" onClick={() => logout()}>
+                    <FontAwesomeIcon icon={faBackward} /> Logout
+                </span>
+            </div>
+        </nav>
     )
 }
 

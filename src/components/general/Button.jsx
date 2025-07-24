@@ -3,13 +3,13 @@ import "./general.css"
 
 const Button = ({
     label,
-    className,
+    className = "",
     onClick,
     icon = null,
     type = "button"
 }) => {
     return (
-        <button className={className} onClick={onClick} type={type}>{icon} {" "}{label}</button>
+        <button className={`general-button ${className}`} onClick={onClick} type={type}>{icon} {" "}{label}</button>
     )
 }
 

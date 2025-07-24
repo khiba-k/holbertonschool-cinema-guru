@@ -1,0 +1,52 @@
+.activity-title {
+    font-size: 1.6rem;
+    border-bottom: 1px solid #555;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.6rem;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    margin-top: 0;
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    color: #eee;
+    overflow-y: auto;
+}
+
+.activities-container {
+    background-color: #333;
+    /* dark grey */
+    border-radius: 4px;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: white;
+    max-height: 500px;
+    overflow-y: auto;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.activity-item {
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.activities-username,
+.activities-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fc1414;
+}
+
+.activity-date {
+    color: #ccc;
+    font-style: italic;
+}

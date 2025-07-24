@@ -10,18 +10,20 @@ const Input = ({ label, type, className, value,
     }
 
     return (
-        <div className='input-and-label'>
-            <label className='label'>
-                {icon && <span className="icon">{icon}</span>}
+        <div className={`input-wrapper ${className}`}>
+            <label className="input-label">
+                {icon && <span className="input-icon">{icon}</span>}
                 {label}:
             </label>
-            <input
-                className={`input-line ${className}`}
-                type={type}
-                value={value}
-                onChange={(e) => handleInput(e)}
-                {...inputAttributes}
-            ></input>
+            <div className="input-container">
+                <input
+                    className="input-field"
+                    type={type}
+                    value={value}
+                    onChange={(e) => handleInput(e)}
+                    {...inputAttributes}
+                ></input>
+            </div>
         </div>
     )
 }

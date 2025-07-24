@@ -13,7 +13,7 @@ const Register = ({
 }) => {
     return (
         <>
-            <h3>Create a new account</h3>
+            <h3 className='auth-header'>Create a new account</h3>
             <Input
                 label={"Username"}
                 type={"text"}
@@ -29,14 +29,16 @@ const Register = ({
                 setValue={setPassword}
                 icon={<FontAwesomeIcon icon={faKey} />}
             />
-            <Button
-                label={"Sign Up"}
-                icon={<FontAwesomeIcon icon={faPlus} />}
-                type={"submit"}
-                onClick={() => {
-                    console.log("Registering user:", username);
-                }}
-            />
+            <div className="submit-container">
+                <Button
+                    label={"Sign Up"}
+                    icon={<FontAwesomeIcon icon={faPlus} />}
+                    type={"submit"}
+                    onClick={() => {
+                        console.log("Registering user:", username);
+                    }}
+                />
+            </div>
         </>
     )
 }

@@ -14,7 +14,7 @@ const Login = ({
 }) => {
     return (
         <>
-            <h3>Sign in with your account</h3>
+            <h3 className='auth-header'>Sign in with your account</h3>
             <Input
                 label={"Username"}
                 type={"text"}
@@ -30,11 +30,13 @@ const Login = ({
                 setValue={setPassword}
                 icon={<FontAwesomeIcon icon={faKey} />}
             />
-            <Button
-            label={"Sign In"}
-            icon={<FontAwesomeIcon icon={faKey} />}
-            type={"submit"}
-            />
+            <div className="submit-container">
+                <Button
+                    label={"Sign In"}
+                    icon={<FontAwesomeIcon icon={faKey} />}
+                    type={"submit"}
+                />
+            </div>
         </>
     )
 }

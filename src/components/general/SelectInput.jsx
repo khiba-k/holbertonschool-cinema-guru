@@ -1,20 +1,20 @@
 import React from 'react'
 import "./general.css"
 
-const SelectInput = ({ label, options, className,
+const SelectInput = ({ label, options, className = "",
     value, setValue
 }) => {
     const handleSelect = (event) => {
         setValue(event.target.value);
     }
 
-    return(
-        <div className='input-and-label'>
-            <label className='label'>
+    return (
+        <div className={`select-wrapper ${className}`}>
+            <label className="select-label">
                 {label}:
             </label>
             <select
-            className='input-line'
+                className="select-field"
                 value={value}
                 onChange={(e) => handleSelect(e)}
             >

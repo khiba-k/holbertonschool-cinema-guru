@@ -25,12 +25,13 @@ const SideBar = () => {
             }
         })
             .then((response) => {
+                console.log("Activity Response Data: ",response.data);
                 setActivities(response.data);
             })
             .catch((error) => {
                 console.error(error);
             })
-    }, [activities])
+    }, [])
 
     const setPage = (pageName) => {
         setSelected(pageName);
@@ -38,33 +39,33 @@ const SideBar = () => {
     }
 
     return (
-        <nav>
-            <ul>
-                <li>
-                    <Button
-                        icon={<FontAwesomeIcon icon={faHome} />}
-                        label={"Home"}
-                        onClick={() => setPage("home")}
-                    />
+        <nav className={`sidebar ${small ? 'small' : ''}`}
+            onMouseEnter={() => setSmall(false)}
+            onMouseLeave={() => setSmall(true)}
+        >
+            <ul className="nav-links">
+                <li onClick={() => setPage("home")}
+                    className={selected === 'home' ? 'active' : ''}
+                >
+                    <FontAwesomeIcon icon={faHome} />
+                    {!small && <span className="label">Home</span>}
                 </li>
-                <li>
-                    <Button
-                        icon={<FontAwesomeIcon icon={faStar} />}
-                        label={"Favorites"}
-                        onClick={() => setPage("favorites")}
-                    />
+                <li onClick={() => setPage("favorites")}
+                    className={selected === 'favorites' ? 'active' : ''}
+                >
+                    <FontAwesomeIcon icon={faStar} />
+                    {!small && <span className="label">Favorites</span>}
                 </li>
-                <li>
-                    <Button
-                        icon={<FontAwesomeIcon icon={faClock} />}
-                        label={"Watch Later"}
-                        onClick={() => setPage("watchlater")}
-                    />
+                <li onClick={() => setPage("watchlater")}
+                    className={selected === 'watchlater' ? 'active' : ''}
+                >
+                    <FontAwesomeIcon icon={faClock} />
+                    {!small && <span className="label">Watch Later</span>}
                 </li>
             </ul>
-            <Activity
+            {!small && (<Activity
                 activities={activities.slice(0, 10)}
-            />
+            />)}
         </nav>
     )
 }

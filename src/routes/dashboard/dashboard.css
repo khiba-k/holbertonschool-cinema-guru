@@ -1,0 +1,52 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .sidebar {
+    width: 60px;
+    flex-shrink: 0;
+  }
+  
+  .main-view {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  /* Default dashboard page layout (not centered) */
+  .dashboard-page {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* WatchLater only: center everything */
+  .dashboard-page.watchlater {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center vertically */
+    min-height: 100%;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .dashboard-page.watchlater h1 {
+    font-size: 63px;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-align: center;
+    border-bottom: 4px solid #e31c25;
+  }
