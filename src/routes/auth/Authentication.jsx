@@ -56,14 +56,12 @@ const Authentication = ({
             <div>
                 <Button
                     label={"Sign In"}
-                    type="button"
                     onClick={() => {
                         _setSwitch(true)
                     }}
                 />
                 <Button
                     label={"Sign Up"}
-                    type="button"
                     onClick={() => {
                         _setSwitch(false)
                     }}

@@ -15,6 +15,7 @@ function App() {
 
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken');
+    console.log('Access Token, App.jsx:', accessToken);
 
     const checkAccessToken = async () => {
       try {

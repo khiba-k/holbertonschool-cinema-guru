@@ -33,7 +33,7 @@ const Login = ({
             <Button
             label={"Sign In"}
             icon={<FontAwesomeIcon icon={faKey} />}
-            type="submit"
+            type={"submit"}
             />
         </>
     )
